@@ -1,0 +1,9 @@
+node_modules
+dist
+*.log
+.DS_Store
+# Raw page dumps and third-party press photos stay local; notes.md quotes what matters
+research/web/
+research/press-reference/
+research/site/*.html
+research/site/site.css

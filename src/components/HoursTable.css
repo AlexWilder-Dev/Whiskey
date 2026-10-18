@@ -1,0 +1,64 @@
+.hours {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  font-size: 15px;
+}
+.hours th,
+.hours td {
+  text-align: left;
+  padding: 10px 8px 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-weight: 400;
+  white-space: nowrap;
+}
+.hours thead th {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mustard);
+}
+.hours tbody th {
+  font-weight: 500;
+  color: var(--chalk);
+}
+.hours td {
+  color: var(--chalk-2);
+}
+.hours tr.is-today th,
+.hours tr.is-today td {
+  color: var(--chalk);
+}
+.hours tr.is-today {
+  background: linear-gradient(90deg, rgba(215, 169, 64, 0.12), transparent 80%);
+}
+.hours__today {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--mustard);
+  border-radius: 3px;
+  padding: 1px 5px;
+  vertical-align: 2px;
+}
+.hours--compact {
+  font-size: 14px;
+}
+.hours--compact th,
+.hours--compact td {
+  padding: 6px 8px 6px 0;
+}
+@media (max-width: 420px) {
+  .hours:not(.hours--compact) {
+    font-size: 13.5px;
+  }
+  .hours:not(.hours--compact) th,
+  .hours:not(.hours--compact) td {
+    padding-right: 6px;
+  }
+}

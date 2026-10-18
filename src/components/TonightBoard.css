@@ -1,0 +1,238 @@
+.board {
+  padding: 18px 0 8px;
+  background: var(--ink);
+}
+.board__grid {
+  display: grid;
+  gap: 22px;
+}
+@media (min-width: 960px) {
+  .board {
+    padding-top: 36px;
+  }
+  .board__grid {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+    gap: 48px;
+    align-items: start;
+  }
+}
+
+.board__clock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--chalk-3);
+  font-variant-numeric: tabular-nums;
+}
+.board__time {
+  color: var(--chalk-2);
+}
+.board__preview-tag {
+  margin-left: 4px;
+  padding: 1px 7px;
+  border-radius: 3px;
+  background: var(--mustard);
+  color: var(--ink);
+  letter-spacing: 0.1em;
+}
+
+.board__status {
+  margin: 4px 0 18px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+}
+.board__big,
+.board__small {
+  display: block;
+}
+.board__big {
+  font-size: clamp(78px, 25vw, 176px);
+  line-height: 0.84;
+  color: var(--chalk);
+}
+.board__small {
+  margin-top: 6px;
+  font-size: clamp(34px, 10.4vw, 72px);
+  line-height: 0.95;
+}
+.board__status--open .board__small {
+  color: var(--shamrock-bright);
+}
+.board__status--soon .board__small,
+.board__status--closed .board__small {
+  color: var(--mustard);
+}
+.board__status--closed .board__big {
+  color: var(--chalk-2);
+}
+
+.board__rows {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.board__row {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  column-gap: 12px;
+  padding: 11px 0 12px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.board__row.is-live::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--gutter));
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  background: var(--shamrock-bright);
+}
+.board__label {
+  grid-row: span 2;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 3px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mustard);
+  line-height: 1.3;
+}
+.board__label .dot {
+  margin-top: 2px;
+}
+.board__value {
+  font-size: 16.5px;
+  font-weight: 500;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+}
+.board__note {
+  font-size: 14px;
+  color: var(--chalk-2);
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+
+.board__find {
+  display: grid;
+  gap: 4px;
+}
+.board__address {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-style: normal;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.board__pin {
+  flex: none;
+  color: var(--mustard);
+}
+.board__landmark {
+  margin: 0 0 10px;
+  color: var(--chalk-2);
+  font-size: 15px;
+}
+.board__maps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.board__maps .btn {
+  font-size: 14px;
+  padding: 8px 12px;
+  gap: 6px;
+}
+
+.board__photo {
+  margin: 0;
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--ink-3);
+}
+.board__photo img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: 50% 82%;
+}
+@media (min-width: 960px) {
+  .board__photo img {
+    aspect-ratio: 4 / 5;
+  }
+}
+.board__photo figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 14px 12px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mustard);
+}
+
+.board__previewbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-top: 22px;
+  padding: 14px 0 18px;
+  border-top: 1px dashed var(--line);
+  font-size: 12.5px;
+  color: var(--chalk-3);
+}
+.board__chips {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  max-width: 100%;
+  padding-bottom: 2px;
+}
+.board__chips::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  flex: none;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--chalk-2);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.chip:hover {
+  color: var(--chalk);
+  border-color: var(--chalk-3);
+}
+.chip.is-on {
+  background: var(--chalk);
+  color: var(--ink);
+  border-color: var(--chalk);
+}

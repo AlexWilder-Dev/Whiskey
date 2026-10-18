@@ -1,0 +1,230 @@
+.slipbox {
+  position: relative;
+  min-height: 560px;
+  display: grid;
+  align-items: start;
+}
+.slip {
+  position: relative;
+  background: #fbfaf6;
+  color: #2b2b2b;
+  padding: 26px 20px 20px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35), 0 2px 0 rgba(0, 0, 0, 0.15);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 33px,
+    rgba(168, 12, 15, 0.12) 33px,
+    rgba(168, 12, 15, 0.12) 34px
+  );
+  background-position: 0 6px;
+}
+/* torn-off perforation along the top */
+.slip__perf {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -6px;
+  height: 7px;
+  background: radial-gradient(circle at 5px 0, transparent 4px, #fbfaf6 4.5px) 0 0 / 10px 7px repeat-x;
+}
+.slip__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 4px 12px;
+  border-bottom: 3px double var(--red);
+  padding-bottom: 10px;
+}
+.slip__the {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-family: var(--f-roman);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--red);
+  letter-spacing: 0.1em;
+}
+.slip__title {
+  font-size: 30px;
+  color: var(--red);
+  line-height: 0.95;
+}
+.slip__price {
+  font-size: 30px;
+  color: #2b2b2b;
+}
+.slip__how {
+  margin: 12px 0 6px;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.45;
+  color: #555;
+}
+.slip__row {
+  border: 0;
+  margin: 0;
+  padding: 10px 0 6px;
+  border-bottom: 1px solid rgba(43, 43, 43, 0.18);
+  min-width: 0;
+}
+.slip__row legend,
+.slip__row--table label {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 6px;
+  font-family: var(--f-poster);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.slip__choices {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+}
+.slip__choices--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.slip__choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.slip__choice:focus-within .slip__tick {
+  outline: 2px solid var(--mustard);
+  outline-offset: 2px;
+}
+.slip__tick {
+  width: 28px;
+  height: 28px;
+  color: #2b2b2b;
+  flex: none;
+}
+.slip__counter {
+  clear: both;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.slip__counter button {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid #2b2b2b;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  color: #2b2b2b;
+  cursor: pointer;
+}
+.slip__tally {
+  width: 100px;
+  height: 32px;
+}
+.slip__pencil {
+  clear: both;
+  margin: 0;
+  padding: 6px 0;
+  font-style: italic;
+  font-size: 15px;
+  color: #6a6a6a;
+}
+.slip__row--table {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.slip__row--table label {
+  float: none;
+  width: auto;
+  margin: 0;
+}
+.slip__row--table input {
+  width: 80px;
+  border: 0;
+  border-bottom: 1.5px solid #2b2b2b;
+  background: transparent;
+  font: inherit;
+  font-size: 22px;
+  font-style: italic;
+  color: #2b2b2b;
+  padding: 2px 4px;
+}
+.slip__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+}
+.slip__stamp {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 2px solid #2b2b2b;
+  border-radius: 999px;
+  font-family: var(--f-poster);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+}
+.slip__actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+.slip__rub {
+  background: none;
+  border: 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: underline;
+  color: #555;
+  cursor: pointer;
+  min-height: 44px;
+}
+.slip__hand {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--f-poster);
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.slip__hand:disabled {
+  background: #cfc9c0;
+  color: #8b8378;
+  cursor: not-allowed;
+}
+.slip__handed {
+  align-self: center;
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 12px;
+}
+.slip__handed .poster {
+  font-size: 40px;
+  color: var(--chalk);
+  margin-bottom: 12px;
+}
+.slip__handed p:not(.poster) {
+  color: var(--chalk-2);
+}

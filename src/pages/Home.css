@@ -1,0 +1,432 @@
+/* ---------- Walk-ins ---------- */
+.walkins__grid {
+  display: grid;
+  gap: 36px;
+}
+@media (min-width: 900px) {
+  .walkins__grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: center;
+  }
+}
+.walkins__title {
+  font-size: clamp(44px, 11.5vw, 84px);
+  margin-bottom: 18px;
+}
+.walkins .lede {
+  color: var(--chalk);
+}
+.walkins__more {
+  color: var(--chalk-2);
+  max-width: 34em;
+}
+.walkins__photos {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 12px;
+  align-items: end;
+}
+.walkins__photos figure {
+  margin: 0;
+}
+.walkins__photos img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+.walkins__tray img {
+  aspect-ratio: 3 / 4;
+  object-position: 50% 55%;
+}
+.walkins__sign {
+  margin-bottom: 36px !important;
+}
+.walkins__sign img {
+  aspect-ratio: 3 / 4.6;
+}
+.walkins__photos figcaption {
+  margin-top: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mustard);
+}
+
+/* ---------- This week (gig bills) ---------- */
+.week__bills {
+  display: grid;
+  gap: 34px;
+}
+@media (min-width: 900px) {
+  .week__bills {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .bill--trad {
+    margin-top: 120px;
+  }
+}
+.bill {
+  display: grid;
+  gap: 16px;
+}
+.bill__photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.bill__photo img {
+  width: 100%;
+  object-fit: cover;
+}
+.bill--blues .bill__photo img {
+  aspect-ratio: 4 / 4.4;
+  object-position: 50% 30%;
+}
+.bill--trad .bill__photo img {
+  aspect-ratio: 4 / 3.4;
+}
+.bill__when {
+  position: absolute;
+  left: 14px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(54px, 15vw, 96px);
+  line-height: 0.86;
+  color: var(--chalk);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55);
+}
+.bill__when span + span {
+  color: var(--mustard);
+  font-size: 0.6em;
+}
+.bill__title {
+  font-size: clamp(34px, 9vw, 52px);
+  line-height: 0.95;
+}
+.bill__every {
+  margin: 8px 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mustard);
+}
+.bill__text p:last-child {
+  margin: 0;
+  color: var(--chalk-2);
+}
+.week__gaa {
+  margin-top: 44px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 18px;
+  align-items: center;
+}
+.week__gaa p {
+  margin: 0;
+}
+.week__gaa-tag {
+  grid-row: span 2;
+  font-size: 46px;
+  color: var(--shamrock-bright);
+}
+.week__gaa .textlink {
+  justify-self: start;
+  font-size: 14px;
+  color: var(--chalk-2);
+}
+.week__more {
+  margin-top: 28px;
+}
+
+/* ---------- Shelf teaser (parchment) ---------- */
+.teaser-shelf {
+  background: var(--parchment);
+  color: var(--parchment-ink);
+}
+.teaser-shelf__frame {
+  color: var(--parchment-ink);
+}
+.teaser-shelf__inner {
+  padding: 30px 20px;
+  text-align: center;
+}
+.teaser-shelf__kicker {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+}
+.teaser-shelf__title {
+  margin: 0 auto;
+  font-size: clamp(30px, 8vw, 54px);
+  line-height: 1.08;
+  max-width: 14em;
+}
+.teaser-shelf__counts {
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: rgba(29, 25, 19, 0.75);
+}
+.teaser-shelf__bar {
+  display: block;
+  background: #121813;
+  padding: 18px 0 0;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+}
+.teaser-shelf__bar::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: rgba(255, 238, 205, 0.55);
+  box-shadow: 0 2px 16px 3px rgba(255, 226, 170, 0.18);
+}
+.teaser-shelf__bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 12px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  border-bottom: 10px solid #3d2c1f;
+  min-width: max-content;
+}
+.teaser-shelf__bar li {
+  flex: none;
+}
+.teaser-shelf__bar:hover .bottle {
+  transform: translateY(-4px);
+}
+.teaser-shelf__bar .bottle {
+  transition: transform 0.25s;
+}
+.teaser-shelf__flights {
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+.teaser-shelf__flist {
+  list-style: none;
+  margin: 0 auto 22px;
+  padding: 0;
+  max-width: 420px;
+  text-align: left;
+}
+.teaser-shelf__flist li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 0;
+  font-weight: 500;
+}
+.teaser-shelf__dots {
+  flex: 1;
+  border-bottom: 1.5px dotted rgba(29, 25, 19, 0.4);
+  transform: translateY(-4px);
+}
+.btn--ink {
+  background: var(--parchment-ink);
+  color: var(--parchment);
+  border-color: var(--parchment-ink);
+}
+.btn--ink:hover {
+  background: #000;
+  color: var(--parchment);
+}
+
+/* ---------- Menu teaser ---------- */
+.teaser-menu__grid {
+  display: grid;
+  gap: 36px;
+}
+@media (min-width: 900px) {
+  .teaser-menu__grid {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+  }
+}
+.teaser-menu__title {
+  font-size: clamp(44px, 11vw, 84px);
+  margin-bottom: 16px;
+}
+.teaser-menu__specials {
+  list-style: none;
+  margin: 22px 0 26px;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.teaser-menu__specials li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--f-poster);
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.teaser-menu__specials li span:last-child {
+  color: var(--mustard);
+}
+.teaser-menu__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.teaser-menu__photo {
+  margin: 0;
+}
+.teaser-menu__photo img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+.teaser-menu__photo figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--chalk-2);
+}
+.teaser-menu__photo strong {
+  font-family: var(--f-poster);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--red);
+  background: var(--paper);
+  padding: 1px 6px;
+  margin-right: 6px;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Wiener ---------- */
+.wienersec__grid {
+  display: grid;
+  gap: 32px;
+}
+@media (min-width: 900px) {
+  .wienersec__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+}
+.wienersec__title {
+  font-size: clamp(44px, 11vw, 80px);
+  margin-bottom: 14px;
+}
+.wienersec__photo {
+  margin-top: 22px;
+}
+.wienersec__photo img {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  object-position: 50% 62%;
+  border-radius: var(--radius);
+}
+.wienersec__hint {
+  margin: 0 0 18px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mustard);
+  text-align: center;
+}
+
+/* ---------- Story ---------- */
+.story__grid {
+  display: grid;
+  gap: 36px;
+}
+@media (min-width: 900px) {
+  .story__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+}
+.story__quote {
+  margin: 0;
+}
+.story__quote p {
+  margin: 0;
+  font-size: clamp(34px, 8.5vw, 60px);
+  line-height: 1.08;
+  font-weight: 600;
+}
+.story__quote footer,
+.story__small footer {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mustard);
+}
+.story__body {
+  color: var(--chalk-2);
+  max-width: 34em;
+}
+.story__small {
+  margin: 24px 0 0;
+  padding-left: 16px;
+  border-left: 2px solid var(--shamrock);
+}
+.story__small p {
+  margin: 0;
+  font-size: 18px;
+}
+.story__slainte {
+  margin: 28px 0 0;
+  font-size: 32px;
+}
+
+/* ---------- Look for ---------- */
+.lookfor__grid {
+  display: grid;
+  gap: 28px;
+}
+@media (min-width: 900px) {
+  .lookfor__grid {
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 56px;
+    align-items: center;
+  }
+}
+.lookfor__photo {
+  margin: 0;
+  max-width: 420px;
+}
+.lookfor__photo img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+.lookfor__title {
+  font-size: clamp(42px, 11vw, 84px);
+  margin-bottom: 14px;
+}
+.lookfor .lede {
+  color: var(--chalk);
+}
+.lookfor__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
