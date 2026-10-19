@@ -2,7 +2,7 @@
 
 A speculative website for **The Whiskey Tumbler**, Brixton's Irish cocktail bar at 401 Coldharbour Lane, London SW9 8LQ. Built to show the owners what their site could do. It's a front-end demo on static data: no bookings, ordering, payments or forms are sent anywhere.
 
-Live: https://alexwilder-dev.github.io/whiskey-tumbler/
+Live: https://alexwilder-dev.github.io/Whiskey/
 
 ## What's in it
 
@@ -37,13 +37,13 @@ Everything the bar would change lives in `src/data`:
 npm install
 npm run dev       # local dev server
 npm run build     # typecheck and build to dist/
-npm run preview   # serve the build at /whiskey-tumbler/
+npm run preview   # serve the build at /Whiskey/
 npm run images    # one-off: rebuild photos, icons and og.jpg from research/images
 ```
 
 ## Deploying
 
-The site is built for GitHub Pages under `/whiskey-tumbler/` (see `base` in `vite.config.ts`). `.github/workflows/deploy.yml` builds and publishes `dist/` on every push to `main`. Pages must be set to deploy from GitHub Actions. The link preview tags in `index.html` use absolute URLs on that address, so if it moves, update them too.
+The site is built for GitHub Pages under `/Whiskey/` (see `base` in `vite.config.ts`). `.github/workflows/deploy.yml` builds and publishes `dist/` on every push to the repository's default branch, or when run by hand from the Actions tab. Pages must be set to deploy from GitHub Actions. The link preview tags in `index.html` use absolute URLs on that address, so if it moves, update them too.
 
 A small visit ping sits at the end of `index.html`. Replace `YOUR-NTFY-TOPIC` with a real ntfy.sh topic, add `?v=name` to a link to tag who opened it, and open the site once with `#me` to stop your own visits being counted.
 
